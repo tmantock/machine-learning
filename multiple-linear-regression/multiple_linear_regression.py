@@ -38,3 +38,10 @@ from sklearn.linear_model import LinearRegression
 
 regressor = LinearRegression()
 regressor.fit(x_train, y_train)
+
+#Predicting the Test Set Results
+y_pred = regressor.predict(x_test)
+
+print y_pred
+print "================"
+print y_test
