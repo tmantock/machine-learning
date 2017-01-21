@@ -43,8 +43,10 @@ plt.ylabel('Salary')
 plt.show()
 
 #Visualizing Polynomial Regression
+X_grid = np.arange(min(x), max(x), 0.1)
+X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(x, y, color = 'red')
-plt.plot(x, lin_reg_2.predict(poly_reg.fit_transform(x)), 'blue')
+plt.plot(X_grid, lin_reg_2.predict(poly_reg.fit_transform(X_grid)), 'blue')
 plt.title('Truth of Bluff (Polynomial Regression)')
 plt.xlabel('Position Level')
 plt.ylabel('Salary')
