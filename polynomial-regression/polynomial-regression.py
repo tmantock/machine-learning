@@ -40,7 +40,7 @@ plt.plot(x, lin_reg.predict(x), 'blue')
 plt.title('Truth or Bluff (Linear Regression)')
 plt.xlabel('Position Level')
 plt.ylabel('Salary')
-plt.show()
+#plt.show()
 
 #Visualizing Polynomial Regression
 X_grid = np.arange(min(x), max(x), 0.1)
@@ -50,4 +50,12 @@ plt.plot(X_grid, lin_reg_2.predict(poly_reg.fit_transform(X_grid)), 'blue')
 plt.title('Truth of Bluff (Polynomial Regression)')
 plt.xlabel('Position Level')
 plt.ylabel('Salary')
-plt.show()
+#plt.show()
+
+#Predicting a new result with Linear Regression
+lin_predition = lin_reg.predict(6.5)
+print(lin_predition)
+
+#Predicting a new result with Polynomial Regression
+poly_prediction = lin_reg_2.predict(poly_reg.fit_transform(6.5))
+print(poly_prediction)
