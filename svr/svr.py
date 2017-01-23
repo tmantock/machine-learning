@@ -28,15 +28,17 @@ regressor = SVR(kernel = 'rbf')
 regressor.fit(x, y)
 
 #Predicting a new result with the SVR Model
-y_pred = regressor.predict(6.5)
+y_pred = sc_y.inverse_transform(regressor.predict(sc_x.transform(np.array([[6.5]]))))
+print np.array([[6.5]])
+print y_pred
 
 #Visualizing the SVR Model Results
 #For higher resolution results use X_grid instead of x
-#X_grid = np.arange(min(x), max(x), 0.1)
-#X_grid = X_grid.reshape((len(X_grid), 1))
+X_grid = np.arange(min(x), max(x), 0.1)
+X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(x, y, color = 'red')
-plt.plot(x, regressor.predict(x), color = 'blue')
-plt.title('Regression Model')
+plt.plot(X_grid, regressor.predict(X_grid), color = 'blue')
+plt.title('SVR Model')
 plt.xlabel('X')
 plt.ylabel('Y')
 plt.show()
