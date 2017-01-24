@@ -34,7 +34,7 @@ print(y_pred)
 
 #Visualizing the Decision Tree Regression Results
 #For higher resolution results use X_grid instead of x
-X_grid = np.arange(min(x), max(x), 0.1)
+X_grid = np.arange(min(x), max(x), 0.01)
 X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(x, y, color = 'red')
 plt.plot(X_grid, regressor.predict(X_grid), color = 'blue')
